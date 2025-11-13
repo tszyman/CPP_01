@@ -4,24 +4,22 @@
 
 int main(void)
 {
-	Weapon club("crude spiked club");
+	{	Weapon club("crude spiked club");
 
-	HumanA andrew("Andrew", club);
-	andrew.attack();
+		HumanA bob("Bob", club);
+		bob.attack();
 
-	club.setType("even more crude spiked club");
-	andrew.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club("crude spiked club");
 
-	HumanB bob("Bob");
-	bob.attack();
-	bob.setWeapon(club);
-	bob.attack();
-
-	club.setType("spiked club crude as never");
-	bob.attack();
-
-	HumanB bob2("Bob(weaponized)", club);
-	bob2.attack();
-
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return 0;
 }
